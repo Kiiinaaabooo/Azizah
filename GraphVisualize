@@ -1,0 +1,50 @@
+// Main application class
+public class GraphVisualizer extends JFrame {
+    private Graph graph;
+    private GraphPanel graphPanel;
+
+    public GraphVisualizer(int[][] adjacencyMatrix, String[] labels) {
+        setTitle("Graph Visualizer - Indonesian Cities");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        graph = new Graph(adjacencyMatrix, labels);
+        graphPanel = new GraphPanel(graph);
+
+        add(graphPanel, BorderLayout.CENTER);
+
+        // Add info panel
+        JPanel infoPanel = new JPanel();
+        infoPanel.setLayout(new FlowLayout());
+        JLabel infoLabel = new JLabel("Drag nodes to rearrange. Arrows show direction, numbers show weights.");
+        infoPanel.add(infoLabel);
+        add(infoPanel, BorderLayout.SOUTH);
+
+        pack();
+        setLocationRelativeTo(null);
+    }
+
+    public static void main(String[] args) {
+        // Labels matching the image
+        String[] labels = {"MKS", "SUB", "DPS", "YOG", "CGK", "DHS", "BTM", "BDG", "MLG", "PDG"};
+        
+        // Adjacency matrix based on the image
+        // Rows: MKS, SUB, DPS, YOG, CGK, DHS, BTM, BDG, MLG, PDG
+        int[][] adjacencyMatrix = {
+            {0, 1, 0, 0, 0, 0, 0, 2, 0, 0},  // MKS -> SUB(1), BDG(2)
+            {0, 0, 1, 0, 2, 0, 0, 0, 0, 0},  // SUB -> DPS(1), CGK(2)
+            {0, 0, 0, 2, 0, 2, 0, 0, 0, 0},  // DPS -> YOG(2), DHS(2)
+            {0, 0, 0, 0, 0, 0, 3, 0, 0, 0},  // YOG -> BTM(3)
+            {0, 0, 0, 0, 0, 4, 0, 0, 6, 0},  // CGK -> DHS(4), MLG(6)
+            {0, 0, 0, 0, 0, 0, 3, 0, 4, 0},  // DHS -> BTM(3), MLG(4)
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 4},  // BTM -> PDG(4)
+            {0, 0, 0, 0, 0, 0, 0, 0, 2, 0},  // BDG -> MLG(2)
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 4},  // MLG -> PDG(4)
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}   // PDG -> none
+        };
+
+        SwingUtilities.invokeLater(() -> {
+            GraphVisualizer visualizer = new GraphVisualizer(adjacencyMatrix, labels);
+            visualizer.setVisible(true);
+        });
+    }
+}
