@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimulasiAkselerasiDay3</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com"/>
+</head>
+<body>
+    <!-- Navbar Section -->
+    <nav id="navbar" class="navbar">
+        <div class ="nav-container">
+            <div class="nav-logo">
+                <span class="logo-about">About</span>
+                <span class="logo-me">Me.</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#hero">home</a>
+                <a href="#minat">minat</a>
+                <a href="#galeri">galeri</a>
+                <a href="#Kontak">Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section" id="hero">
+        <div class="hero-container">
+             <div class="hero-image">
+                <img src="./foto foto/p5.jpeg" alt="Rectangle1"/>
+            </div>
+            <div class="hero-content">
+                <p class="hero-greeting">Hello Welcome</p>
+                <h1 class="hero-title"> I'm<span class="highLight"> Azizah Alhasna Ramadhani</span></h1>
+                <p class="hero-description">Mahasiswa gabut yang suka berkelana Surabaya dan Hunting kucing kucing imupp!!</p>
+                <a href=""> <button class="btn-contact">Contact Me</button></a>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="hero-section" id="minat">
+        <div class="hero-container">
+            <!-- Bagian teks -->
+            <div class="hero-content">
+                <p class="hero-greeting">Hello Welcome</p>
+                <h1 class="hero-title">Minat <span class="highLight"> Dan </span> Keterampilan</h1>
+                <ol class="hero-Minat">
+                    <li>Nyari kucing</li>
+                    <li>ngelus kucing</li>
+                    <li>"pspspsps.."</li>
+                </ol>
+            </div>
+            <div class="hero-image">
+                <img src="./foto foto/p1.jpeg" alt="Rectangle2"/>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+<!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
+      <div class="gallery-container">
+        <div class="gallery-header">
+          <h2 class="gallery-title">
+            My <span class="highlight">Animal</span>
+          </h2>
+          <p class="gallery-description">
+           This Is My CATTTTT!!!!!
+          </p>
+        </div>
+        <div class="gallery-grid">
+          <div class="gallery-item large">
+            <img src="/foto foto/p2.jpeg" alt="Project 1" />
+          </div>
+          <div class="gallery-column">
+            <div class="gallery-item">
+              <img src="/foto foto/p3.jpeg" alt="Project 2" />
+            </div>
+            <div class="gallery-item">
+              <img src="/foto foto/p4.jpeg" alt="Project 3" />
+            </div>
+          </div>
+          <div class="gallery-column">
+            <div class="gallery-item">
+              <img src="/foto foto/p6.jpeg" alt="Project 4" />
+            </div>
+            <div class="gallery-item">
+              <img src="/foto foto/p7.jpeg" alt="Project 5" />
+            </div>
+ </div>
+        </div>
+    </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+    <div class="contact-container">
+        <div class="contact-header">
+        <h2 class="contact-title">
+            Contact <span class="highlight">Me</span>
+                </h2>
+        <p class="contact-description">
+            Chat aja yawww kalo mau nanya nanya tentang kucinggg!! i'm expert abt cattt things!
+        </p>
+        </div>
+       
+<!-- Contact Form - Updated Layout -->
+        <div class="contact-form-section">
+        <form
+            id="contactForm"
+            onsubmit="handleSubmit(event)"
+            class="contact-form-new"
+        >
+            <div class="form-group name-field">
+            <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Name"
+                required
+            />
+</div>
+            <div class="form-group message-field">
+            <textarea
+                id="message"
+                name="message"
+                placeholder="Message"
+                rows="6"
+                required
+            ></textarea>
+            </div>
+            <button type="submit" class="btn-contact submit-btn">
+            Contact Me
+            </button>
+        </form>
+        </div>
+</section>
+<script src="script.js"></script>
+
+
+</body>
+</html>
+
+
+
